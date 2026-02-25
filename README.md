@@ -10,12 +10,24 @@ npx quartz plugin add github:quartz-community/content-meta
 
 ## Usage
 
-```ts
-// quartz.layout.ts
-import * as Plugin from "./.quartz/plugins";
+```yaml title="quartz.config.yaml"
+plugins:
+  - source: github:quartz-community/content-meta
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 20
+```
 
-// Add to your layout
-Plugin.ContentMeta(); // in the appropriate layout section
+For advanced use cases, you can override in TypeScript:
+
+```ts title="quartz.ts (override)"
+import * as ExternalPlugin from "./.quartz/plugins";
+
+ExternalPlugin.ContentMeta({
+  showReadingTime: true,
+  showComma: true,
+});
 ```
 
 ## Configuration
@@ -27,7 +39,7 @@ Plugin.ContentMeta(); // in the appropriate layout section
 
 ## Documentation
 
-See the [Quartz documentation](https://quartz.jzhao.xyz/) for more information.
+See the [Quartz documentation](https://quartz.jzhao.xyz/plugins/ContentMeta) for more information.
 
 ## License
 
