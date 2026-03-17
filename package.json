@@ -49,8 +49,7 @@
   },
   "peerDependencies": {
     "@jackyzha0/quartz": "^4.5.2",
-    "preact": "^10.0.0",
-    "reading-time": "^1.5.0"
+    "preact": "^10.0.0"
   },
   "peerDependenciesMeta": {
     "@jackyzha0/quartz": {
@@ -58,9 +57,6 @@
     },
     "preact": {
       "optional": false
-    },
-    "reading-time": {
-      "optional": true
     }
   },
   "dependencies": {
