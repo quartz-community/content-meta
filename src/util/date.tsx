@@ -9,13 +9,14 @@ export function getDate(
   cfg: { defaultDateType?: string },
   data: Record<string, unknown>,
 ): Date | undefined {
-  if (!cfg.defaultDateType) {
+  const dateType = (data.defaultDateType as string) ?? cfg.defaultDateType;
+  if (!dateType) {
     throw new Error(
-      `Field 'defaultDateType' was not set in the configuration object of quartz.config.ts. See https://quartz.jzhao.xyz/configuration#general-configuration for more details.`,
+      `Field 'defaultDateType' was not set. Either configure it in the CreatedModifiedDate plugin options or set it in quartz.config.ts. See https://quartz.jzhao.xyz/configuration#general-configuration for more details.`,
     );
   }
   const dates = data.dates as Record<string, Date> | undefined;
-  return dates?.[cfg.defaultDateType];
+  return dates?.[dateType];
 }
 
 export function formatDate(d: Date, locale: string = "en-US"): string {

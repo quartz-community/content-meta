@@ -190,13 +190,14 @@ function i18n(locale) {
   return locales[locale] || en_US_default;
 }
 function getDate(cfg, data) {
-  if (!cfg.defaultDateType) {
+  const dateType = data.defaultDateType ?? cfg.defaultDateType;
+  if (!dateType) {
     throw new Error(
-      `Field 'defaultDateType' was not set in the configuration object of quartz.config.ts. See https://quartz.jzhao.xyz/configuration#general-configuration for more details.`
+      `Field 'defaultDateType' was not set. Either configure it in the CreatedModifiedDate plugin options or set it in quartz.config.ts. See https://quartz.jzhao.xyz/configuration#general-configuration for more details.`
     );
   }
   const dates = data.dates;
-  return dates?.[cfg.defaultDateType];
+  return dates?.[dateType];
 }
 function formatDate(d, locale = "en-US") {
   return d.toLocaleDateString(locale, {
