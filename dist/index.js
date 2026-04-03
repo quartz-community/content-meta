@@ -209,11 +209,17 @@ var ContentMeta_default = ((opts) => {
       const segments = [];
       if (fileData.dates) {
         const locale = cfg.locale || "en-US";
-        const dataWithDefaultDateType = {
-          ...fileData,
-          defaultDateType: cfg.defaultDateType
-        };
-        segments.push(/* @__PURE__ */ jsx(DateComponent, { date: getDate(dataWithDefaultDateType), locale }));
+        const defaultDateType = fileData.defaultDateType ?? cfg.defaultDateType;
+        if (defaultDateType) {
+          const dataWithDefaultDateType = {
+            ...fileData,
+            defaultDateType
+          };
+          const date = getDate(dataWithDefaultDateType);
+          if (date) {
+            segments.push(/* @__PURE__ */ jsx(DateComponent, { date, locale }));
+          }
+        }
       }
       if (options.showReadingTime) {
         const { minutes, words: _words } = (0, import_reading_time.default)(text);

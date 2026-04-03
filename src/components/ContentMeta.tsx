@@ -36,11 +36,19 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
       if (fileData.dates) {
         const locale = cfg.locale || "en-US";
-        const dataWithDefaultDateType: QuartzPluginData = {
-          ...(fileData as QuartzPluginData),
-          defaultDateType: cfg.defaultDateType as ValidDateType,
-        };
-        segments.push(<DateComponent date={getDate(dataWithDefaultDateType)!} locale={locale} />);
+        const defaultDateType =
+          (fileData.defaultDateType as ValidDateType | undefined) ??
+          (cfg.defaultDateType as ValidDateType | undefined);
+        if (defaultDateType) {
+          const dataWithDefaultDateType: QuartzPluginData = {
+            ...(fileData as QuartzPluginData),
+            defaultDateType,
+          };
+          const date = getDate(dataWithDefaultDateType);
+          if (date) {
+            segments.push(<DateComponent date={date} locale={locale} />);
+          }
+        }
       }
 
       // Display reading time if enabled
