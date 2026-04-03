@@ -1,4 +1,9 @@
-import type { QuartzComponentConstructor, QuartzComponentProps } from "@quartz-community/types";
+import type {
+  QuartzComponentConstructor,
+  QuartzComponentProps,
+  QuartzPluginData,
+  ValidDateType,
+} from "@quartz-community/types";
 import readingTime from "reading-time";
 import { classNames } from "../util/lang";
 import { i18n } from "../i18n";
@@ -31,7 +36,11 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
       if (fileData.dates) {
         const locale = cfg.locale || "en-US";
-        segments.push(<DateComponent date={getDate(cfg, fileData)!} locale={locale} />);
+        const dataWithDefaultDateType: QuartzPluginData = {
+          ...(fileData as QuartzPluginData),
+          defaultDateType: cfg.defaultDateType as ValidDateType,
+        };
+        segments.push(<DateComponent date={getDate(dataWithDefaultDateType)!} locale={locale} />);
       }
 
       // Display reading time if enabled

@@ -1,5 +1,6 @@
 import { createRequire } from 'module';
 import { formatDate } from '@quartz-community/utils/date';
+import { getDate } from '@quartz-community/utils/sort';
 import { jsx } from 'preact/jsx-runtime';
 
 const require$1 = createRequire(import.meta.url);
@@ -190,16 +191,6 @@ var locales = {
 function i18n(locale) {
   return locales[locale] || en_US_default;
 }
-function getDate(cfg, data) {
-  const dateType = data.defaultDateType ?? cfg.defaultDateType;
-  if (!dateType) {
-    throw new Error(
-      `Field 'defaultDateType' was not set. Either configure it in the CreatedModifiedDate plugin options or set it in quartz.config.ts. See https://quartz.jzhao.xyz/configuration#general-configuration for more details.`
-    );
-  }
-  const dates = data.dates;
-  return dates?.[dateType];
-}
 function DateComponent({ date, locale }) {
   return /* @__PURE__ */ jsx("time", { datetime: date.toISOString(), children: formatDate(date, locale) });
 }
@@ -218,7 +209,11 @@ var ContentMeta_default = ((opts) => {
       const segments = [];
       if (fileData.dates) {
         const locale = cfg.locale || "en-US";
-        segments.push(/* @__PURE__ */ jsx(DateComponent, { date: getDate(cfg, fileData), locale }));
+        const dataWithDefaultDateType = {
+          ...fileData,
+          defaultDateType: cfg.defaultDateType
+        };
+        segments.push(/* @__PURE__ */ jsx(DateComponent, { date: getDate(dataWithDefaultDateType), locale }));
       }
       if (options.showReadingTime) {
         const { minutes, words: _words } = (0, import_reading_time.default)(text);
