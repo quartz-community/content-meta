@@ -1,4 +1,5 @@
 import { createRequire } from 'module';
+import { formatDate } from '@quartz-community/utils/date';
 import { jsx } from 'preact/jsx-runtime';
 
 const require$1 = createRequire(import.meta.url);
@@ -198,13 +199,6 @@ function getDate(cfg, data) {
   }
   const dates = data.dates;
   return dates?.[dateType];
-}
-function formatDate(d, locale = "en-US") {
-  return d.toLocaleDateString(locale, {
-    year: "numeric",
-    month: "short",
-    day: "2-digit"
-  });
 }
 function DateComponent({ date, locale }) {
   return /* @__PURE__ */ jsx("time", { datetime: date.toISOString(), children: formatDate(date, locale) });
