@@ -1,3 +1,5 @@
+import { formatDate } from "@quartz-community/utils/date";
+
 export type ValidDateType = "created" | "modified" | "published";
 
 interface Props {
@@ -17,14 +19,6 @@ export function getDate(
   }
   const dates = data.dates as Record<string, Date> | undefined;
   return dates?.[dateType];
-}
-
-export function formatDate(d: Date, locale: string = "en-US"): string {
-  return d.toLocaleDateString(locale, {
-    year: "numeric",
-    month: "short",
-    day: "2-digit",
-  });
 }
 
 export function DateComponent({ date, locale }: Props) {
