@@ -1,6 +1,4 @@
 import { createRequire } from 'module';
-import { formatDate } from '@quartz-community/utils/date';
-import { getDate } from '@quartz-community/utils/sort';
 import { jsx } from 'preact/jsx-runtime';
 
 const require$1 = createRequire(import.meta.url);
@@ -165,7 +163,7 @@ var require_reading_time2 = __commonJS({
 // src/components/ContentMeta.tsx
 var import_reading_time = __toESM(require_reading_time2());
 
-// src/util/lang.ts
+// node_modules/@quartz-community/utils/dist/lang.js
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -184,12 +182,321 @@ var en_US_default = {
   }
 };
 
+// src/i18n/locales/ar-SA.ts
+var ar_SA_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => minutes == 1 ? `\u062F\u0642\u064A\u0642\u0629 \u0623\u0648 \u0623\u0642\u0644 \u0644\u0644\u0642\u0631\u0627\u0621\u0629` : minutes == 2 ? `\u062F\u0642\u064A\u0642\u062A\u0627\u0646 \u0644\u0644\u0642\u0631\u0627\u0621\u0629` : `${minutes} \u062F\u0642\u0627\u0626\u0642 \u0644\u0644\u0642\u0631\u0627\u0621\u0629`
+    }
+  }
+};
+
+// src/i18n/locales/ca-ES.ts
+var ca_ES_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `Es llegeix en ${minutes} min`
+    }
+  }
+};
+
+// src/i18n/locales/cs-CZ.ts
+var cs_CZ_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} min \u010Dten\xED`
+    }
+  }
+};
+
+// src/i18n/locales/de-DE.ts
+var de_DE_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} Min. Lesezeit`
+    }
+  }
+};
+
+// src/i18n/locales/en-GB.ts
+var en_GB_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} min read`
+    }
+  }
+};
+
+// src/i18n/locales/es-ES.ts
+var es_ES_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `Se lee en ${minutes} min`
+    }
+  }
+};
+
+// src/i18n/locales/fa-IR.ts
+var fa_IR_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `\u0632\u0645\u0627\u0646 \u062A\u0642\u0631\u06CC\u0628\u06CC \u0645\u0637\u0627\u0644\u0639\u0647: ${minutes} \u062F\u0642\u06CC\u0642\u0647`
+    }
+  }
+};
+
+// src/i18n/locales/fi-FI.ts
+var fi_FI_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} min lukuaika`
+    }
+  }
+};
+
+// src/i18n/locales/fr-FR.ts
+var fr_FR_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} min de lecture`
+    }
+  }
+};
+
+// src/i18n/locales/he-IL.ts
+var he_IL_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} \u05D3\u05E7\u05D5\u05EA \u05E7\u05E8\u05D9\u05D0\u05D4`
+    }
+  }
+};
+
+// src/i18n/locales/hu-HU.ts
+var hu_HU_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} perces olvas\xE1s`
+    }
+  }
+};
+
+// src/i18n/locales/id-ID.ts
+var id_ID_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} menit baca`
+    }
+  }
+};
+
+// src/i18n/locales/it-IT.ts
+var it_IT_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => minutes === 1 ? "1 minuto" : `${minutes} minuti`
+    }
+  }
+};
+
+// src/i18n/locales/ja-JP.ts
+var ja_JP_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} min read`
+    }
+  }
+};
+
+// src/i18n/locales/kk-KZ.ts
+var kk_KZ_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} \u043C\u0438\u043D \u043E\u049B\u0443`
+    }
+  }
+};
+
+// src/i18n/locales/ko-KR.ts
+var ko_KR_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} min read`
+    }
+  }
+};
+
+// src/i18n/locales/lt-LT.ts
+var lt_LT_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} min skaitymo`
+    }
+  }
+};
+
+// src/i18n/locales/nb-NO.ts
+var nb_NO_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} min lesning`
+    }
+  }
+};
+
+// src/i18n/locales/nl-NL.ts
+var nl_NL_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => minutes === 1 ? "1 minuut leestijd" : `${minutes} minuten leestijd`
+    }
+  }
+};
+
+// src/i18n/locales/pl-PL.ts
+var pl_PL_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} min. czytania `
+    }
+  }
+};
+
+// src/i18n/locales/pt-BR.ts
+var pt_BR_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `Leitura de ${minutes} min`
+    }
+  }
+};
+
+// src/i18n/locales/ro-RO.ts
+var ro_RO_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => minutes == 1 ? `lectur\u0103 de 1 minut` : `lectur\u0103 de ${minutes} minute`
+    }
+  }
+};
+
+// src/i18n/locales/ru-RU.ts
+var ru_RU_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `\u0432\u0440\u0435\u043C\u044F \u0447\u0442\u0435\u043D\u0438\u044F ~${minutes} \u043C\u0438\u043D.`
+    }
+  }
+};
+
+// src/i18n/locales/th-TH.ts
+var th_TH_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `\u0E2D\u0E48\u0E32\u0E19\u0E23\u0E32\u0E27 ${minutes} \u0E19\u0E32\u0E17\u0E35`
+    }
+  }
+};
+
+// src/i18n/locales/tr-TR.ts
+var tr_TR_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} dakika okuma s\xFCresi`
+    }
+  }
+};
+
+// src/i18n/locales/uk-UA.ts
+var uk_UA_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} \u0445\u0432 \u0447\u0438\u0442\u0430\u043D\u043D\u044F`
+    }
+  }
+};
+
+// src/i18n/locales/vi-VN.ts
+var vi_VN_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes} ph\xFAt \u0111\u1ECDc`
+    }
+  }
+};
+
+// src/i18n/locales/zh-CN.ts
+var zh_CN_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `${minutes}\u5206\u949F\u9605\u8BFB`
+    }
+  }
+};
+
+// src/i18n/locales/zh-TW.ts
+var zh_TW_default = {
+  components: {
+    contentMeta: {
+      readingTime: ({ minutes }) => `\u95B1\u8B80\u6642\u9593\u7D04 ${minutes} \u5206\u9418`
+    }
+  }
+};
+
 // src/i18n/index.ts
 var locales = {
-  "en-US": en_US_default
+  "en-US": en_US_default,
+  "ar-SA": ar_SA_default,
+  "ca-ES": ca_ES_default,
+  "cs-CZ": cs_CZ_default,
+  "de-DE": de_DE_default,
+  "en-GB": en_GB_default,
+  "es-ES": es_ES_default,
+  "fa-IR": fa_IR_default,
+  "fi-FI": fi_FI_default,
+  "fr-FR": fr_FR_default,
+  "he-IL": he_IL_default,
+  "hu-HU": hu_HU_default,
+  "id-ID": id_ID_default,
+  "it-IT": it_IT_default,
+  "ja-JP": ja_JP_default,
+  "kk-KZ": kk_KZ_default,
+  "ko-KR": ko_KR_default,
+  "lt-LT": lt_LT_default,
+  "nb-NO": nb_NO_default,
+  "nl-NL": nl_NL_default,
+  "pl-PL": pl_PL_default,
+  "pt-BR": pt_BR_default,
+  "ro-RO": ro_RO_default,
+  "ru-RU": ru_RU_default,
+  "th-TH": th_TH_default,
+  "tr-TR": tr_TR_default,
+  "uk-UA": uk_UA_default,
+  "vi-VN": vi_VN_default,
+  "zh-CN": zh_CN_default,
+  "zh-TW": zh_TW_default
 };
 function i18n(locale) {
   return locales[locale] || en_US_default;
+}
+
+// node_modules/@quartz-community/utils/dist/date.js
+function formatDate(d, locale = "en-US") {
+  return d.toLocaleDateString(locale, {
+    year: "numeric",
+    month: "short",
+    day: "2-digit"
+  });
+}
+
+// node_modules/@quartz-community/utils/dist/sort.js
+function getDate(data) {
+  const defaultDateType = data.defaultDateType;
+  if (!defaultDateType) {
+    return void 0;
+  }
+  const dates = data.dates;
+  return dates?.[defaultDateType];
 }
 function DateComponent({ date, locale }) {
   return /* @__PURE__ */ jsx("time", { datetime: date.toISOString(), children: formatDate(date, locale) });

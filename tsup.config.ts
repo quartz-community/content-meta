@@ -13,6 +13,7 @@ export default defineConfig({
   treeshake: true,
   target: "es2022",
   splitting: false,
+  noExternal: ["@quartz-community/utils"],
   outDir: "dist",
   platform: "node",
   banner: {
