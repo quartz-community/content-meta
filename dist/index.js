@@ -1,5 +1,4 @@
 import { createRequire } from 'module';
-import { jsx } from 'preact/jsx-runtime';
 
 const require$1 = createRequire(import.meta.url);
 var __create = Object.create;
@@ -8,11 +7,11 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __require = /* @__PURE__ */ ((x) => typeof require$1 !== "undefined" ? require$1 : typeof Proxy !== "undefined" ? new Proxy(x, {
-  get: (a, b) => (typeof require$1 !== "undefined" ? require$1 : a)[b]
-}) : x)(function(x) {
+var __require = /* @__PURE__ */ ((x2) => typeof require$1 !== "undefined" ? require$1 : typeof Proxy !== "undefined" ? new Proxy(x2, {
+  get: (a2, b2) => (typeof require$1 !== "undefined" ? require$1 : a2)[b2]
+}) : x2)(function(x2) {
   if (typeof require$1 !== "undefined") return require$1.apply(this, arguments);
-  throw Error('Dynamic require of "' + x + '" is not supported');
+  throw Error('Dynamic require of "' + x2 + '" is not supported');
 });
 var __commonJS = (cb, mod) => function __require2() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
@@ -42,11 +41,11 @@ var require_reading_time = __commonJS({
         ([lowerBound, upperBound]) => lowerBound <= number && number <= upperBound
       );
     }
-    function isCJK(c) {
-      if ("string" !== typeof c) {
+    function isCJK(c2) {
+      if ("string" !== typeof c2) {
         return false;
       }
-      const charCode = c.charCodeAt(0);
+      const charCode = c2.charCodeAt(0);
       return codeIsInRanges(
         charCode,
         [
@@ -63,14 +62,14 @@ var require_reading_time = __commonJS({
         ]
       );
     }
-    function isAnsiWordBound(c) {
-      return " \n\r	".includes(c);
+    function isAnsiWordBound(c2) {
+      return " \n\r	".includes(c2);
     }
-    function isPunctuation(c) {
-      if ("string" !== typeof c) {
+    function isPunctuation(c2) {
+      if ("string" !== typeof c2) {
         return false;
       }
-      const charCode = c.charCodeAt(0);
+      const charCode = c2.charCodeAt(0);
       return codeIsInRanges(
         charCode,
         [
@@ -93,13 +92,13 @@ var require_reading_time = __commonJS({
       while (isWordBound(text[end])) end--;
       const normalizedText = `${text}
 `;
-      for (let i = start; i <= end; i++) {
-        if (isCJK(normalizedText[i]) || !isWordBound(normalizedText[i]) && (isWordBound(normalizedText[i + 1]) || isCJK(normalizedText[i + 1]))) {
+      for (let i2 = start; i2 <= end; i2++) {
+        if (isCJK(normalizedText[i2]) || !isWordBound(normalizedText[i2]) && (isWordBound(normalizedText[i2 + 1]) || isCJK(normalizedText[i2 + 1]))) {
           words++;
         }
-        if (isCJK(normalizedText[i])) {
-          while (i <= end && (isPunctuation(normalizedText[i + 1]) || isWordBound(normalizedText[i + 1]))) {
-            i++;
+        if (isCJK(normalizedText[i2])) {
+          while (i2 <= end && (isPunctuation(normalizedText[i2 + 1]) || isWordBound(normalizedText[i2 + 1]))) {
+            i2++;
           }
         }
       }
@@ -481,8 +480,8 @@ function i18n(locale) {
 }
 
 // node_modules/@quartz-community/utils/dist/date.js
-function formatDate(d, locale = "en-US") {
-  return d.toLocaleDateString(locale, {
+function formatDate(d2, locale = "en-US") {
+  return d2.toLocaleDateString(locale, {
     year: "numeric",
     month: "short",
     day: "2-digit"
@@ -498,12 +497,36 @@ function getDate(data) {
   const dates = data.dates;
   return dates?.[defaultDateType];
 }
+var l;
+l = { __e: function(n2, l2, u3, t2) {
+  for (var i2, r2, o2; l2 = l2.__; ) if ((i2 = l2.__c) && !i2.__) try {
+    if ((r2 = i2.constructor) && null != r2.getDerivedStateFromError && (i2.setState(r2.getDerivedStateFromError(n2)), o2 = i2.__d), null != i2.componentDidCatch && (i2.componentDidCatch(n2, t2 || {}), o2 = i2.__d), o2) return i2.__E = i2;
+  } catch (l3) {
+    n2 = l3;
+  }
+  throw n2;
+} }, "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, Math.random().toString(8);
+
+// node_modules/preact/jsx-runtime/dist/jsxRuntime.mjs
+var f2 = 0;
+function u2(e2, t2, n2, o2, i2, u3) {
+  t2 || (t2 = {});
+  var a2, c2, p2 = t2;
+  if ("ref" in p2) for (c2 in p2 = {}, t2) "ref" == c2 ? a2 = t2[c2] : p2[c2] = t2[c2];
+  var l2 = { type: e2, props: p2, key: n2, ref: a2, __k: null, __: null, __b: 0, __e: null, __c: null, constructor: void 0, __v: --f2, __i: -1, __u: 0, __source: i2, __self: u3 };
+  if ("function" == typeof e2 && (a2 = e2.defaultProps)) for (c2 in a2) void 0 === p2[c2] && (p2[c2] = a2[c2]);
+  return l.vnode && l.vnode(l2), l2;
+}
+
+// src/util/date.tsx
 function DateComponent({ date, locale }) {
-  return /* @__PURE__ */ jsx("time", { datetime: date.toISOString(), children: formatDate(date, locale) });
+  return /* @__PURE__ */ u2("time", { datetime: date.toISOString(), children: formatDate(date, locale) });
 }
 
 // src/components/styles/contentMeta.scss
 var contentMeta_default = '.content-meta {\n  margin-top: 0;\n  color: var(--darkgray);\n}\n.content-meta[show-comma=true] > *:not(:last-child) {\n  margin-right: 8px;\n}\n.content-meta[show-comma=true] > *:not(:last-child)::after {\n  content: ",";\n}';
+
+// src/components/ContentMeta.tsx
 var defaultOptions = {
   showReadingTime: true,
   showComma: true
@@ -524,7 +547,7 @@ var ContentMeta_default = ((opts) => {
           };
           const date = getDate(dataWithDefaultDateType);
           if (date) {
-            segments.push(/* @__PURE__ */ jsx(DateComponent, { date, locale }));
+            segments.push(/* @__PURE__ */ u2(DateComponent, { date, locale }));
           }
         }
       }
@@ -535,9 +558,9 @@ var ContentMeta_default = ((opts) => {
         const displayedTime = i18nData.components.contentMeta.readingTime({
           minutes: Math.ceil(minutes)
         });
-        segments.push(/* @__PURE__ */ jsx("span", { children: displayedTime }));
+        segments.push(/* @__PURE__ */ u2("span", { children: displayedTime }));
       }
-      return /* @__PURE__ */ jsx("p", { "show-comma": options.showComma, class: classNames(displayClass, "content-meta"), children: segments });
+      return /* @__PURE__ */ u2("p", { "show-comma": options.showComma, class: classNames(displayClass, "content-meta"), children: segments });
     } else {
       return null;
     }
