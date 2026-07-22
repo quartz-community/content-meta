@@ -33,9 +33,9 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 
-// node_modules/reading-time/lib/reading-time.js
+// ../../node_modules/.pnpm/reading-time@1.5.0/node_modules/reading-time/lib/reading-time.js
 var require_reading_time = __commonJS({
-  "node_modules/reading-time/lib/reading-time.js"(exports$1, module) {
+  "../../node_modules/.pnpm/reading-time@1.5.0/node_modules/reading-time/lib/reading-time.js"(exports, module) {
     function codeIsInRanges(number, arrayOfRanges) {
       return arrayOfRanges.some(
         ([lowerBound, upperBound]) => lowerBound <= number && number <= upperBound
@@ -116,9 +116,9 @@ var require_reading_time = __commonJS({
   }
 });
 
-// node_modules/reading-time/lib/stream.js
+// ../../node_modules/.pnpm/reading-time@1.5.0/node_modules/reading-time/lib/stream.js
 var require_stream = __commonJS({
-  "node_modules/reading-time/lib/stream.js"(exports$1, module) {
+  "../../node_modules/.pnpm/reading-time@1.5.0/node_modules/reading-time/lib/stream.js"(exports, module) {
     var readingTime2 = require_reading_time();
     var Transform = __require("stream").Transform;
     var util = __require("util");
@@ -151,9 +151,9 @@ var require_stream = __commonJS({
   }
 });
 
-// node_modules/reading-time/index.js
+// ../../node_modules/.pnpm/reading-time@1.5.0/node_modules/reading-time/index.js
 var require_reading_time2 = __commonJS({
-  "node_modules/reading-time/index.js"(exports$1, module) {
+  "../../node_modules/.pnpm/reading-time@1.5.0/node_modules/reading-time/index.js"(exports, module) {
     module.exports.default = module.exports = require_reading_time();
     module.exports.readingTimeStream = require_stream();
   }
@@ -162,7 +162,7 @@ var require_reading_time2 = __commonJS({
 // src/components/ContentMeta.tsx
 var import_reading_time = __toESM(require_reading_time2());
 
-// node_modules/@quartz-community/utils/dist/lang.js
+// ../utils/dist/lang.js
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -479,7 +479,7 @@ function i18n(locale) {
   return locales[locale] || en_US_default;
 }
 
-// node_modules/@quartz-community/utils/dist/date.js
+// ../utils/dist/date.js
 function formatDate(d2, locale = "en-US") {
   return d2.toLocaleDateString(locale, {
     year: "numeric",
@@ -488,7 +488,7 @@ function formatDate(d2, locale = "en-US") {
   });
 }
 
-// node_modules/@quartz-community/utils/dist/sort.js
+// ../utils/dist/sort.js
 function getDate(data) {
   const defaultDateType = data.defaultDateType;
   if (!defaultDateType) {
@@ -507,7 +507,7 @@ l = { __e: function(n2, l2, u3, t2) {
   throw n2;
 } }, "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, Math.random().toString(8);
 
-// node_modules/preact/jsx-runtime/dist/jsxRuntime.mjs
+// ../../node_modules/.pnpm/preact@10.29.7_preact-render-to-string@6.7.0/node_modules/preact/jsx-runtime/dist/jsxRuntime.mjs
 var f2 = 0;
 function u2(e2, t2, n2, o2, i2, u3) {
   t2 || (t2 = {});
